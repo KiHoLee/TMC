@@ -18,13 +18,15 @@ Builds on the published shared-embedding multiple-access framework
   SNR sweeps, closed-form overlays) → `data/e1_*.csv`
 - `code/exp2_structure.py` — E2: embedding-structure optimization on
   real BERT embeddings (spectral recovery, learned adapter, held-out
-  evaluation ladder) → `data/e2_*.csv`, `data/e2_exponents.txt`
+  evaluation ladder, paired spec-vs-adapter confidence intervals) →
+  `data/e2_*.csv`, `data/e2_exponents.txt`
 - `code/exp3_mobility.py` — E3: time-varying affinity tracking under
   mobility (scene traversal and speed sweep) → `data/e3_*.csv`
 - `code/exp4_mismatch.py` — E4: robustness to affinity estimation
   error → `data/e4_mismatch.csv`
 - `code/exp5_learned.py` — E5: comparison with a trained user-wise
-  attention receiver → `data/e5_learned.csv`, `data/e5_train_log.csv`
+  attention receiver → `data/e5_learned.csv`, `data/e5_train_log.csv`,
+  `data/e5_valcurve.csv` (fixed-affinity validation curve)
 - `code/check_mask_realization.py` — realized Haar-mask front end vs
   the expected cross-Gram model → `data/e_mask_check.csv`
 - `code/replot_all.py` — the single canonical figure generator; reads
