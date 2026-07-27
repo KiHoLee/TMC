@@ -1,0 +1,3 @@
+U=2 exponent=-0.355
+U=4 exponent=-0.466
+U=8 exponent=-0.506
