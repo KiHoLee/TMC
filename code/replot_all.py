@@ -247,7 +247,7 @@ for snr_db, c, mk in ((5, "tab:red", "s"), (10, "tab:blue", "o"),
            if int(r["snr"]) == snr_db]
     ax.plot([p[0] for p in pts], [p[1] for p in pts], "-", color=c,
             marker=mk, label=f"{snr_db} dB")
-ax.set_xlabel(r"affinity estimation error $\delta$")
+ax.set_xlabel(r"share-coefficient estimation error $\delta$")
 ax.set_ylabel("mean cosine recovery")
 ax.set_ylim(0.40, 1.0)
 ax.grid(alpha=0.3)
