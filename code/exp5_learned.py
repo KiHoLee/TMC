@@ -70,6 +70,14 @@ def main():
     print(f"learned receiver parameters: {n_par}")
     opt = torch.optim.Adam(net.parameters(), lr=1e-3)
     train_log = []
+    # fixed validation batch at beta=0.5 (dedicated RNG, so the training
+    # stream is untouched); evaluated every 100 steps as convergence
+    # evidence for the fixed training budget
+    rng_v = np.random.default_rng(777)
+    z_v, tilde_v, h_v, a_v, B_v = gen_batch(rng_v, 2000, 0.5)
+    zv_t = torch.tensor(z_v, dtype=torch.float32)
+    tv_t = torch.tensor(tilde_v, dtype=torch.float32)
+    val_log = []
     for it in range(STEPS):
         beta = float(rng.uniform(0.05, 0.9))
         z, tilde, h, a, B = gen_batch(rng, BATCH, beta)
@@ -82,12 +90,22 @@ def main():
         opt.step()
         if (it + 1) % 50 == 0:
             train_log.append((it + 1, float(loss.item())))
+        if (it + 1) % 100 == 0:
+            with torch.no_grad():
+                ov = net(tv_t)
+                vloss = float((1.0 - (ov * zv_t).sum(-1)).mean())
+            val_log.append((it + 1, vloss))
         if (it + 1) % 500 == 0:
-            print(f"  step {it+1}: loss={loss.item():.4f}")
-    # convergence evidence for the fixed training budget
+            print(f"  step {it+1}: loss={loss.item():.4f} "
+                  f"val={val_log[-1][1]:.4f}")
     with open(os.path.join(DATA, "e5_train_log.csv"), "w") as f:
         f.write("step,loss\n")
         for st, lo in train_log:
+            f.write(f"{st},{lo}\n")
+    # fixed-beta validation curve (convergence evidence)
+    with open(os.path.join(DATA, "e5_valcurve.csv"), "w") as f:
+        f.write("step,val_loss\n")
+        for st, lo in val_log:
             f.write(f"{st},{lo}\n")
 
     # evaluation across the affinity sweep

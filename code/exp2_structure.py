@@ -22,7 +22,8 @@ import os
 import numpy as np
 import torch
 
-from semantic_mac import (EmbeddingPool, affinity_matrix, matched_filter,
+from semantic_mac import (TAU, EmbeddingPool, affinity_matrix,
+                          matched_filter,
                           demux_lmmse, demux_dr, sample_latents_pool,
                           random_orthogonal, learn_structure_spectral,
                           subspace_error, metrics,
@@ -209,8 +210,14 @@ def main():
         f.write(f"spectral_err={err_spec}\nadapter_err={err_ad}\n")
 
     # --- performance ladder vs SNR (held-out pool sentences) ---------------
+    def inst_cos(e_hat, x_true):
+        """Per-instance cosine (batch, U) without consuming any RNG."""
+        e_n = e_hat / (np.linalg.norm(e_hat, axis=2, keepdims=True) + 1e-12)
+        return (e_n * x_true).sum(-1)
+
     snrs = list(range(0, 21, 4))
     rows = []
+    paired = []
     for s in snrs:
         rho = 10 ** (s / 10)
         z, x = gen_clean(pool, BATCH_EVAL, a, R, rng, idx_pool=IDX_EVAL)
@@ -218,22 +225,35 @@ def main():
         r = {}
         lm, _ = demux_lmmse(tilde, B, h, rho)
         r["LMMSE"] = metrics(lm, x)
-        r["DR-spec"] = metrics(demux_dr(tilde, B, h, rho, a, V_spec), x)
-        r["DR-adapt"] = metrics(
-            demux_dr(tilde, B, h, rho, a, W_ad.T[:, :DC]), x)
+        out_spec = demux_dr(tilde, B, h, rho, a, V_spec)
+        out_adapt = demux_dr(tilde, B, h, rho, a, W_ad.T[:, :DC])
+        r["DR-spec"] = metrics(out_spec, x)
+        r["DR-adapt"] = metrics(out_adapt, x)
         r["DR-oracle"] = metrics(demux_dr(tilde, B, h, rho, a, V_true), x)
         rng_c = np.random.default_rng(91000 + s)
         r["OMA"] = metrics(oma_observe(x, h, rho, rng_c), x)
         r["NOMA"] = metrics(demux_noma_genie(x, h, rho, rng_c), x)
         rows.append(r)
+        # paired spec-vs-adapter error difference on the SAME channel draws
+        err_s = (inst_cos(out_spec, x) < TAU).astype(float).ravel()
+        err_a = (inst_cos(out_adapt, x) < TAU).astype(float).ravel()
+        d_i = err_s - err_a
+        se = float(d_i.std(ddof=1) / math.sqrt(d_i.size))
+        paired.append((s, float(err_s.mean()), float(err_a.mean()),
+                       float(d_i.mean()), se))
         print(f"snr={s:2d} " + " ".join(
-            f"{k}:cos={v[0]:.3f},ser={v[2]:.3f}" for k, v in r.items()))
+            f"{k}:cos={v[0]:.3f},ser={v[2]:.3f}" for k, v in r.items())
+            + f" paired_diff={d_i.mean():+.5f} se={se:.5f}")
     keys = ["OMA", "NOMA", "LMMSE", "DR-spec", "DR-adapt", "DR-oracle"]
     with open(os.path.join(DATA, "e2_ladder.csv"), "w") as f:
         f.write("snr," + ",".join(f"{k}_cos,{k}_nmse,{k}_ser" for k in keys) + "\n")
         for s, r in zip(snrs, rows):
             f.write(f"{s}," + ",".join(
                 f"{r[k][0]},{r[k][1]},{r[k][2]}" for k in keys) + "\n")
+    with open(os.path.join(DATA, "e2_paired.csv"), "w") as f:
+        f.write("snr,ser_spec,ser_adapt,mean_diff,se_diff\n")
+        for row in paired:
+            f.write(",".join(str(v) for v in row) + "\n")
 
     # figures are produced only by the canonical replot_all.py (uniform
     # geometry); experiment scripts write CSVs exclusively.
