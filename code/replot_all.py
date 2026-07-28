@@ -139,12 +139,18 @@ for Um, c, mk, ls in ((2, "tab:orange", "s", "-."),
 ax.set_xlabel("paired calibration samples $N$")
 ax.set_ylabel("subspace recovery error")
 # plain tick labels at the measured N values; suppress the crowded
-# mantissa minor labels of the default log locator
+# mantissa minor labels of the default log locator. The y axis uses
+# short decimal labels so that the axis title fits inside the fixed
+# canvas (wide mantissa labels pushed it off the left edge).
 from matplotlib.ticker import NullLocator
 Ns_ticks = [200, 400, 800, 1600, 3200, 6400]
 ax.set_xticks(Ns_ticks)
 ax.set_xticklabels([str(n) for n in Ns_ticks])
 ax.xaxis.set_minor_locator(NullLocator())
+y_ticks = [0.1, 0.2, 0.3, 0.4, 0.6]
+ax.set_yticks(y_ticks)
+ax.set_yticklabels([f"{v:g}" for v in y_ticks])
+ax.yaxis.set_minor_locator(NullLocator())
 ax.grid(True, which="both", alpha=0.3)
 ax.legend(loc="upper right", labelspacing=0.3)
 savefig(fig, "fig_e2_subspace.pdf")
