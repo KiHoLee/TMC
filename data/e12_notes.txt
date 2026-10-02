@@ -1,0 +1,7 @@
+pool (8000, 768), KNN=8, U=4, SNR=20 dB
+embeddings transmitted unmodified, no imposed decomposition
+measured pairwise affinity: mean 0.3453, sd 0.1288, 10th pct 0.178, 90th pct 0.509
+d_c= 32: LMMSE cos=0.410/ser=0.609/top1=0.510/top5=0.862/scene=0.991 BLMMSE cos=0.550/ser=0.228/top1=0.347/top5=0.656/scene=0.879 DR cos=0.542/ser=0.240/top1=0.346/top5=0.641/scene=0.846 NOMA cos=0.294/ser=0.854/top1=0.874/top5=0.924/scene=0.884
+d_c= 64: LMMSE cos=0.410/ser=0.609/top1=0.510/top5=0.862/scene=0.991 BLMMSE cos=0.535/ser=0.262/top1=0.342/top5=0.696/scene=0.935 DR cos=0.530/ser=0.272/top1=0.350/top5=0.685/scene=0.916 NOMA cos=0.294/ser=0.854/top1=0.874/top5=0.924/scene=0.884
+d_c=128: LMMSE cos=0.410/ser=0.609/top1=0.510/top5=0.862/scene=0.991 BLMMSE cos=0.498/ser=0.355/top1=0.347/top5=0.726/scene=0.962 DR cos=0.494/ser=0.362/top1=0.360/top5=0.720/scene=0.952 NOMA cos=0.294/ser=0.854/top1=0.874/top5=0.924/scene=0.884
+d_c=256: LMMSE cos=0.410/ser=0.609/top1=0.510/top5=0.862/scene=0.991 BLMMSE cos=0.440/ser=0.515/top1=0.382/top5=0.767/scene=0.978 DR cos=0.435/ser=0.525/top1=0.401/top5=0.760/scene=0.968 NOMA cos=0.294/ser=0.854/top1=0.874/top5=0.924/scene=0.884

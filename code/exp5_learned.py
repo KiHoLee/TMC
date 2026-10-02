@@ -24,7 +24,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 FIG = os.path.join(HERE, "..", "fig")
 DATA = os.path.join(HERE, "..", "data")
 
-U, D, DC = 4, 64, 16
+from semantic_mac import U_MAIN as U, D_SYN as D, DC_SYN as DC  # Table IV
 SNR_DB = 10
 RHO = 10 ** (SNR_DB / 10)
 STEPS = 3000

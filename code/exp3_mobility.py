@@ -27,7 +27,7 @@ DATA = os.path.join(HERE, "..", "data")
 os.makedirs(FIG, exist_ok=True)
 os.makedirs(DATA, exist_ok=True)
 
-U, D, DC = 4, 64, 16
+from semantic_mac import U_MAIN as U, D_SYN as D, DC_SYN as DC  # Table IV
 BATCH = 320
 SNR_DB = 12
 RHO = 10 ** (SNR_DB / 10)

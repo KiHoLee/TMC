@@ -1,0 +1,8 @@
+beta=0.5, U=4, d=64, d_c=16, batch=4000
+both receivers receive the same perturbed estimate
+ 5 dB, delta=-0.20: DR cosine loss +0.0045, subspace LMMSE cosine loss +0.0127
+ 5 dB, delta=+0.20: DR cosine loss +0.0049, subspace LMMSE cosine loss +0.0056
+10 dB, delta=-0.20: DR cosine loss -0.0024, subspace LMMSE cosine loss +0.0078
+10 dB, delta=+0.20: DR cosine loss +0.0095, subspace LMMSE cosine loss +0.0084
+15 dB, delta=-0.20: DR cosine loss -0.0095, subspace LMMSE cosine loss +0.0031
+15 dB, delta=+0.20: DR cosine loss +0.0171, subspace LMMSE cosine loss +0.0102

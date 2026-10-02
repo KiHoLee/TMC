@@ -1,0 +1,34 @@
+pool (8000, 768), KNN=8, U=4, N_EVAL=3000
+measured affinity mean 0.3453 sd 0.1288
+d_c= 32 20dB grid=coarse LMMSE    cos=0.410 ser=0.608 top1=0.514 scene_err=0.009
+d_c= 32 20dB grid=coarse SC       cos=0.381 ser=0.680 top1=0.247 scene_err=0.006
+d_c= 32 20dB grid=coarse DR       cos=0.541 ser=0.240 top1=0.347 scene_err=0.158
+d_c= 32 20dB grid=coarse DR-MMSE  cos=0.550 ser=0.227 top1=0.347 scene_err=0.118
+d_c= 32 20dB grid=fine   LMMSE    cos=0.408 ser=0.615 top1=0.513 scene_err=0.006
+d_c= 32 20dB grid=fine   SC       cos=0.379 ser=0.689 top1=0.248 scene_err=0.005
+d_c= 32 20dB grid=fine   DR       cos=0.541 ser=0.236 top1=0.351 scene_err=0.161
+d_c= 32 20dB grid=fine   DR-MMSE  cos=0.549 ser=0.222 top1=0.351 scene_err=0.127
+d_c= 32 30dB grid=coarse LMMSE    cos=0.716 ser=0.057 top1=0.790 scene_err=0.002
+d_c= 32 30dB grid=coarse SC       cos=0.606 ser=0.179 top1=0.249 scene_err=0.001
+d_c= 32 30dB grid=coarse DR       cos=0.673 ser=0.073 top1=0.719 scene_err=0.047
+d_c= 32 30dB grid=coarse DR-MMSE  cos=0.688 ser=0.067 top1=0.696 scene_err=0.030
+d_c= 32 30dB grid=fine   LMMSE    cos=0.714 ser=0.053 top1=0.794 scene_err=0.002
+d_c= 32 30dB grid=fine   SC       cos=0.603 ser=0.173 top1=0.249 scene_err=0.004
+d_c= 32 30dB grid=fine   DR       cos=0.671 ser=0.069 top1=0.727 scene_err=0.044
+d_c= 32 30dB grid=fine   DR-MMSE  cos=0.686 ser=0.063 top1=0.702 scene_err=0.024
+d_c=128 20dB grid=coarse LMMSE    cos=0.410 ser=0.608 top1=0.514 scene_err=0.009
+d_c=128 20dB grid=coarse SC       cos=0.381 ser=0.680 top1=0.247 scene_err=0.006
+d_c=128 20dB grid=coarse DR       cos=0.493 ser=0.365 top1=0.365 scene_err=0.043
+d_c=128 20dB grid=coarse DR-MMSE  cos=0.497 ser=0.354 top1=0.353 scene_err=0.033
+d_c=128 20dB grid=fine   LMMSE    cos=0.408 ser=0.615 top1=0.513 scene_err=0.006
+d_c=128 20dB grid=fine   SC       cos=0.379 ser=0.689 top1=0.248 scene_err=0.005
+d_c=128 20dB grid=fine   DR       cos=0.492 ser=0.363 top1=0.367 scene_err=0.044
+d_c=128 20dB grid=fine   DR-MMSE  cos=0.497 ser=0.355 top1=0.352 scene_err=0.034
+d_c=128 30dB grid=coarse LMMSE    cos=0.716 ser=0.057 top1=0.790 scene_err=0.002
+d_c=128 30dB grid=coarse SC       cos=0.606 ser=0.179 top1=0.249 scene_err=0.001
+d_c=128 30dB grid=coarse DR       cos=0.646 ser=0.101 top1=0.611 scene_err=0.018
+d_c=128 30dB grid=coarse DR-MMSE  cos=0.656 ser=0.096 top1=0.584 scene_err=0.012
+d_c=128 30dB grid=fine   LMMSE    cos=0.714 ser=0.053 top1=0.794 scene_err=0.002
+d_c=128 30dB grid=fine   SC       cos=0.603 ser=0.173 top1=0.249 scene_err=0.004
+d_c=128 30dB grid=fine   DR       cos=0.644 ser=0.097 top1=0.615 scene_err=0.014
+d_c=128 30dB grid=fine   DR-MMSE  cos=0.654 ser=0.091 top1=0.587 scene_err=0.010

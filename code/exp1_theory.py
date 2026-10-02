@@ -17,7 +17,7 @@ DATA = os.path.join(HERE, "..", "data")
 os.makedirs(FIG, exist_ok=True)
 os.makedirs(DATA, exist_ok=True)
 
-U, D, DC = 4, 64, 16
+from semantic_mac import U_MAIN as U, D_SYN as D, DC_SYN as DC  # Table IV
 BATCH = 4000
 NAMES = ["OMA", "NOMA", "SR", "SC", "LMMSE", "DR"]
 
@@ -82,7 +82,10 @@ def main():
     lines = []
     a = math.sqrt(0.4) * np.ones(U)
     B = affinity_matrix(a)
-    h = np.clip(np.abs((rng.standard_normal(U) + 1j * rng.standard_normal(U))
+    # the check draws from its own generator, seeded after the sweeps, so
+    # it neither inherits the model's draw nor moves with the sweep list
+    rng_chk = np.random.default_rng(424242)
+    h = np.clip(np.abs((rng_chk.standard_normal(U) + 1j * rng_chk.standard_normal(U))
                        / math.sqrt(2)), 0.2, None)
     for rdb in (10, 40, 80):
         W, _ = lmmse_matrices(B, h, 10 ** (-rdb / 10), D)

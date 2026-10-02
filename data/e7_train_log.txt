@@ -1,0 +1,41 @@
+device=cuda
+  side_info=False seed=0 step=1000 loss=0.4817
+  side_info=False seed=0 step=2000 loss=0.2329
+  side_info=False seed=0 step=3000 loss=0.2403
+trained side_info=False seed=0 params=12545
+  side_info=False seed=1 step=1000 loss=0.4050
+  side_info=False seed=1 step=2000 loss=0.6328
+  side_info=False seed=1 step=3000 loss=0.6632
+trained side_info=False seed=1 params=12545
+  side_info=False seed=2 step=1000 loss=0.5500
+  side_info=False seed=2 step=2000 loss=0.6825
+  side_info=False seed=2 step=3000 loss=0.1670
+trained side_info=False seed=2 params=12545
+  side_info=False seed=3 step=1000 loss=0.2225
+  side_info=False seed=3 step=2000 loss=0.7154
+  side_info=False seed=3 step=3000 loss=0.6920
+trained side_info=False seed=3 params=12545
+  side_info=False seed=4 step=1000 loss=0.2968
+  side_info=False seed=4 step=2000 loss=0.2517
+  side_info=False seed=4 step=3000 loss=0.4632
+trained side_info=False seed=4 params=12545
+  side_info=True seed=0 step=1000 loss=0.4756
+  side_info=True seed=0 step=2000 loss=0.2277
+  side_info=True seed=0 step=3000 loss=0.2334
+trained side_info=True seed=0 params=14787
+  side_info=True seed=1 step=1000 loss=0.4012
+  side_info=True seed=1 step=2000 loss=0.6156
+  side_info=True seed=1 step=3000 loss=0.6429
+trained side_info=True seed=1 params=14787
+  side_info=True seed=2 step=1000 loss=0.5398
+  side_info=True seed=2 step=2000 loss=0.6778
+  side_info=True seed=2 step=3000 loss=0.1623
+trained side_info=True seed=2 params=14787
+  side_info=True seed=3 step=1000 loss=0.2216
+  side_info=True seed=3 step=2000 loss=0.7087
+  side_info=True seed=3 step=3000 loss=0.6739
+trained side_info=True seed=3 params=14787
+  side_info=True seed=4 step=1000 loss=0.2954
+  side_info=True seed=4 step=2000 loss=0.2474
+  side_info=True seed=4 step=3000 loss=0.4484
+trained side_info=True seed=4 params=14787

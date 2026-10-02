@@ -1,0 +1,16 @@
+operating point beta=0.5, SNR=10 dB, U=4, d=64
+phase +- 0 deg: LMMSE ser=0.2806, DR ser=0.0384, DR cos=0.6126
+phase +- 5 deg: LMMSE ser=0.2764, DR ser=0.0401, DR cos=0.6134
+phase +-10 deg: LMMSE ser=0.2666, DR ser=0.0373, DR cos=0.6157
+phase +-20 deg: LMMSE ser=0.2868, DR ser=0.0426, DR cos=0.6090
+phase +-30 deg: LMMSE ser=0.3043, DR ser=0.0446, DR cos=0.6057
+ch.est sigma_e=0.00: LMMSE ser=0.2694, DR ser=0.0389
+ch.est sigma_e=0.05: LMMSE ser=0.2828, DR ser=0.0465
+ch.est sigma_e=0.10: LMMSE ser=0.2921, DR ser=0.0415
+ch.est sigma_e=0.20: LMMSE ser=0.2799, DR ser=0.0433
+ch.est sigma_e=0.30: LMMSE ser=0.2914, DR ser=0.0448
+imbalance  0 dB: LMMSE ser=0.2652, DR ser=0.0346, DR per-user [0.035, 0.035, 0.035, 0.034] (spread +0.001); LMMSE spread +0.009
+imbalance  3 dB: LMMSE ser=0.2810, DR ser=0.0472, DR per-user [0.049, 0.049, 0.046, 0.045] (spread +0.005); LMMSE spread +0.076
+imbalance  6 dB: LMMSE ser=0.3204, DR ser=0.0504, DR per-user [0.055, 0.051, 0.048, 0.048] (spread +0.007); LMMSE spread +0.151
+imbalance 10 dB: LMMSE ser=0.3767, DR ser=0.0713, DR per-user [0.078, 0.075, 0.070, 0.062] (spread +0.016); LMMSE spread +0.280
+imbalance 15 dB: LMMSE ser=0.4506, DR ser=0.0989, DR per-user [0.110, 0.103, 0.098, 0.086] (spread +0.024); LMMSE spread +0.414

@@ -35,11 +35,37 @@ from __future__ import annotations
 import math
 import numpy as np
 
-TAU = 0.45  # SER threshold on cosine (same operating definition as prior work)
+TAU = 0.45  # SER threshold on cosine, fixed in advance and shared by every scheme
+
+# ----------------------------------------------------------------------
+#  Main configuration (Table IV). Every experiment, check and plotting
+#  script imports these names instead of keeping its own copy, so a change
+#  here moves the whole project at once (writing standard 7.9).
+# ----------------------------------------------------------------------
+U_MAIN = 4                       # users
+D_SYN, DC_SYN = 64, 16           # synthetic contents (theory and mobility)
+D_REAL, DC_REAL = 768, 128       # real BERT embeddings
+SNR_MAIN_DB = 10                 # main operating point
+SNR_E3_DB = 12                   # mobility experiments
+K_PILOT, N_PILOT, L_D = 5, 64, 320   # pilot period, pilots per user, embeddings per slot
+LAMBDA_EWMA = 0.3
+N_PAIRS = 200                    # calibration pairs
+MOB = dict(box=50.0, r_scene=32.0, a_max=0.95)   # +-box square, scene radius, peak share
+
+try:                              # GPU by default, CPU fallback, one flag for all scripts
+    import torch
+    DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+except ImportError:               # NumPy-only experiments never need torch
+    torch = None
+    DEVICE = "cpu"
 
 
 def set_seed(seed: int):
     np.random.seed(seed)
+    if torch is not None:
+        torch.manual_seed(seed)
+        if str(DEVICE) == "cuda":
+            torch.cuda.manual_seed_all(seed)
 
 
 # ----------------------------------------------------------------------
@@ -127,18 +153,28 @@ def random_orthogonal(d, rng):
 # ----------------------------------------------------------------------
 #  Matched-filter MAC front end (JSAC / AA-EDMA convention)
 # ----------------------------------------------------------------------
-def matched_filter(e, B, rho, rng, fading=True):
+H_MIN = 0.2   # deep-fade clip; E[1/h^2] diverges under unclipped Rayleigh
+
+
+def matched_filter(e, B, rho, rng, fading=True, h_min=H_MIN, h_fixed=None):
     """tilde_u = sum_v (h_v/h_u) B_uv e_v + n_u,
-    Cov(n_u,n_w) = (sigma^2 B_uw / (h_u h_w)) I_d.  Returns (tilde, h)."""
+    Cov(n_u,n_w) = (sigma^2 B_uw / (h_u h_w)) I_d.  Returns (tilde, h).
+
+    h_min clips deep fades. The clip is required rather than cosmetic,
+    because the fading-averaged error laws contain E[1/h_u^2], which
+    diverges for unclipped Rayleigh fading. It is applied to the channel
+    realization and therefore affects every receiver identically."""
     batch, U, d = e.shape
     sigma2 = 1.0 / rho
     B = np.asarray(B, dtype=np.float64)
     if B.ndim == 2:
         B = np.broadcast_to(B, (batch, U, U))
-    if fading:
+    if h_fixed is not None:
+        h = np.broadcast_to(np.asarray(h_fixed, float), (batch, U)).copy()
+    elif fading:
         hc = (rng.standard_normal((batch, U)) +
               1j * rng.standard_normal((batch, U))) / math.sqrt(2)
-        h = np.clip(np.abs(hc), 0.2, None)
+        h = np.clip(np.abs(hc), h_min, None)
     else:
         h = np.ones((batch, U))
     tilde = np.einsum('buv,bvd,bv,bu->bud', B, e, h, 1.0 / h)

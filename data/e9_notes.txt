@@ -1,0 +1,10 @@
+subspace error at N=200: spectral 0.5067, adapter 0.4712
+held-out pool size 1000, chance level 0.0010, SNR 20 dB, beta 0.5
+OMA       cos=0.1468 ser=1.0000 shared_top1=0.3604 private_top1=0.3835
+NOMA      cos=0.2943 ser=0.8536 shared_top1=0.7641 private_top1=0.7742
+LMMSE     cos=0.4920 ser=0.3358 shared_top1=0.9984 private_top1=0.3724
+DRspec    cos=0.5834 ser=0.0324 shared_top1=0.9987 private_top1=0.3127
+DRadapt   cos=0.5852 ser=0.0274 shared_top1=0.9985 private_top1=0.3956
+BLMMSE    cos=0.6308 ser=0.0112 shared_top1=0.9985 private_top1=0.6393
+DRoracle  cos=0.6231 ser=0.0117 shared_top1=0.9985 private_top1=0.6728
+private top-1 retrieval first reaches 50% in the cosine bin starting at 0.6000000000000001

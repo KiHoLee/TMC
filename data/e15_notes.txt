@@ -1,0 +1,13 @@
+differentiable subspace LMMSE matches the numpy receiver to relative 1.51e-15
+subspace error, spectral: 0.5046
+subspace error, adapter(DR): 0.4697
+subspace error, adapter(subspace): 0.4668
+subspace error, true: 0.0000
+basis=spectral           receiver=DR        cos=0.5830 ser=0.0309 top1=0.3215
+basis=spectral           receiver=Subspace  cos=0.5975 ser=0.0267 top1=0.3631
+basis=adapter(DR)        receiver=DR        cos=0.5859 ser=0.0255 top1=0.3964
+basis=adapter(DR)        receiver=Subspace  cos=0.6004 ser=0.0219 top1=0.4464
+basis=adapter(subspace)  receiver=DR        cos=0.5851 ser=0.0252 top1=0.4043
+basis=adapter(subspace)  receiver=Subspace  cos=0.5999 ser=0.0222 top1=0.4552
+basis=true               receiver=DR        cos=0.6231 ser=0.0117 top1=0.6728
+basis=true               receiver=Subspace  cos=0.6308 ser=0.0112 top1=0.6393

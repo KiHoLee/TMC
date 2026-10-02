@@ -1,0 +1,16 @@
+Configuration: U=4, d=768, n_p=64, K=5, B_d=320, N_cal=200, 4 bits per coefficient
+
+contribution                                        cost      fraction
+----------------------------------------------------------------------
+affinity pilots                        256 of 1600 slots     16.0000%
+share-coefficient feedback           16 bits per 5 slots    0.000651%
+mask refresh                         regenerated locally      0.0000%
+----------------------------------------------------------------------
+total recurring                                              16.0007%
+
+calibration (one time)                         800 slots    0.025000%   amortized over 10000 coherence blocks
+
+At d=64 the feedback term is 0.0078% of the slot budget.
+The feedback term is smaller than the pilot term by a factor of 24576, so the recurring total rounds to the same
+figure as the pilot term alone at the reported precision. The mask refresh is
+free over the air because the seed never changes and only the coefficients travel.

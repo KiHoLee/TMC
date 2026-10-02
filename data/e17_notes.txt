@@ -1,0 +1,4 @@
+n_p=  8 per user  overhead= 2.00%  traversal SER tracked=0.4343 genie=0.3699 static=0.4319 (tracked +17.4% vs genie)  speed gaps 0.034 0.026 0.037 0.045 0.043
+n_p= 16 per user  overhead= 4.00%  traversal SER tracked=0.4223 genie=0.3712 static=0.4336 (tracked +13.8% vs genie)  speed gaps 0.024 0.022 0.035 0.038 0.040
+n_p= 32 per user  overhead= 8.00%  traversal SER tracked=0.4129 genie=0.3698 static=0.4322 (tracked +11.7% vs genie)  speed gaps 0.015 0.018 0.031 0.036 0.036
+n_p= 64 per user  overhead=16.00%  traversal SER tracked=0.4047 genie=0.3700 static=0.4323 (tracked +9.4% vs genie)  speed gaps 0.012 0.016 0.026 0.034 0.035

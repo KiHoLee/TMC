@@ -1,4 +1,4 @@
-(i) rho=10dB rel_diff_W_vs_Gammainv=9.940e-01
-(i) rho=40dB rel_diff_W_vs_Gammainv=1.771e-01
-(i) rho=80dB rel_diff_W_vs_Gammainv=2.322e-05
-(ii) beta=0 max_offdiag=0.000e+00 max_diag_minus_wiener=2.776e-17
+(i) rho=10dB rel_diff_W_vs_Gammainv=9.489e-01
+(i) rho=40dB rel_diff_W_vs_Gammainv=4.813e-02
+(i) rho=80dB rel_diff_W_vs_Gammainv=5.149e-06
+(ii) beta=0 max_offdiag=0.000e+00 max_diag_minus_wiener=1.110e-16

@@ -1,0 +1,7 @@
+beta=0.3 10dB | MMSE filter 0.63481 | DR filter 0.64356 (+1.38%) | perturbations beating MMSE: 0/4000
+beta=0.5 10dB | MMSE filter 0.45340 | DR filter 0.46654 (+2.90%) | perturbations beating MMSE: 0/4000
+beta=0.4 4dB | MMSE filter 0.58349 | DR filter 0.58761 (+0.71%) | perturbations beating MMSE: 0/4000
+
+beta=0.3 10dB | DR shared branch vs MMSE shared branch: relative difference 1.31e-16
+beta=0.5 10dB | DR shared branch vs MMSE shared branch: relative difference 1.58e-16
+beta=0.4 4dB | DR shared branch vs MMSE shared branch: relative difference 7.22e-17

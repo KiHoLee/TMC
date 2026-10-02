@@ -7,7 +7,7 @@ orthogonal R (the frozen encoder's arbitrary basis).  We compare:
   (i)   LMMSE            -- B-aware optimal linear receiver, no structure
   (ii)  DR + spectral    -- closed-form shared-subspace recovery from N pairs
   (iii) DR + adapter     -- channel-in-the-loop learned linear refinement
-  (iv)  DR + oracle      -- true mixing basis (upper bound)
+  (iv)  DR (paper label) -- true mixing basis; CSV key DR-oracle
 
 Calibration, adapter training, and subspace/spectrum sweeps draw only from
 the first 7000 pool sentences; the performance ladder is evaluated on
@@ -41,7 +41,7 @@ POOL_PT = os.path.join(HERE, "..", "data", "bert_agnews_8000.pt")
 if not os.path.exists(POOL_PT):
     POOL_PT = os.path.join(HERE, "..", "..", "5. WCL-DRL",
                            "bert_agnews_8000.pt")
-U, D, DC = 4, 768, 128
+from semantic_mac import U_MAIN as U, D_REAL as D, DC_REAL as DC  # Table IV
 BETA = 0.5
 N_PAIR = 200          # paired calibration samples available to the optimizer
 BATCH_EVAL = 4000
