@@ -9,8 +9,8 @@ be reproduced rather than asserted.
 
 Contributions
   pilots      each user sends n_p clean embeddings on orthogonal resources
-              every K-th slot, within a coherence block of B_d embedding
-              slots. This is the dominant term and the one the original
+              every K-th slot, where a slot carries B_d embeddings per user
+              at a fixed affinity, each under its own fading draw. This is the dominant term and the one the original
               manuscript reported.
   feedback    the receiver returns U share coefficients per update. The
               accuracy needed is set by Remark 1, which shows the receiver
@@ -38,7 +38,7 @@ D = D_REAL              # embedding dimension; the d=64 case is printed as well
 BITS_PER_COEF = 4       # 16 levels over [0,1], step 0.0625, well inside
                         # the +-0.2 flat region established by Remark 1
 BITS_PER_DIM = 2        # control-channel efficiency assumed for feedback
-RECAL_BLOCKS = 10 ** 4  # coherence blocks between encoder recalibrations
+RECAL_BLOCKS = 10 ** 4  # slots between recalibrations
 
 
 def main():
@@ -84,9 +84,9 @@ def main():
     lines.append(f"{'total recurring':<34}{'':>22}{total_recurring:>13.4%}")
     lines.append("")
     lines.append(f"{'calibration (one time)':<34}"
-                 f"{f'{cal_slots} slots':>22}"
+                 f"{f'{cal_slots} emb. = {cal_slots / B_D:.1f} slots':>22}"
                  f"{cal_frac:>13.6%}"
-                 f"   amortized over {RECAL_BLOCKS} coherence blocks")
+                 f"   amortized over {RECAL_BLOCKS} slots")
     lines.append("")
     lines.append(f"At d={D_SYN} the feedback term is {fb_frac_syn:.4%} of the slot budget.")
     lines.append("The feedback term is smaller than the pilot term by a "

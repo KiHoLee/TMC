@@ -25,7 +25,7 @@ PY
 python3 - <<'PY'
 import re,sys
 s=open("TMC-2026-07-3202-main.tex",encoding="utf-8").read(); b=open("refs.bib",encoding="utf-8").read()
-c=set(k.strip() for m in re.finditer(r"\\cite\{([^}]*)\}",s) for k in m.group(1).split(","))
+c=set(k.strip() for m in re.finditer(r"\\(?:bstctl)?cite\{([^}]*)\}",s) for k in m.group(1).split(","))  # \bstctlcite cites the IEEEtran control entry
 k=set(re.findall(r"@\w+\{([^,]+),",b))
 if c!=k: print("FAIL bib:",sorted(c-k),sorted(k-c)); sys.exit(1)
 PY

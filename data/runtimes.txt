@@ -1,0 +1,4 @@
+machine: arm macOS-27.0.1-arm64-arm-64bit threads: torch 1 OMP 1 | numpy 2.2.5 torch 2.5.1
+spectral calibration, N=200, d=768: 0.088 s
+adapter training, 400 steps, batch 24: 3.35 s
+experiment E1 (all closed-form receivers, 18 points x 4000 draws): 3.9 s

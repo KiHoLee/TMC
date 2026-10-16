@@ -32,12 +32,20 @@ number in the paper is regenerated from the files here.
 | Fig. 13 | `exp11_impairments.py` | `e11_imbalance.csv` |
 | Table V | `exp9_retrieval.py` | `e9_retrieval.csv` |
 | Table VI | `exp11_impairments.py` | `e11_phase.csv`, `e11_gain.csv` |
-| E10 (text) | `exp10_eval_choices.py` | `e10_threshold_sweep.csv`, `e10_clip_sweep.csv` |
+| E10 (text), thresholds 0.35 to 0.65 | `exp10_eval_choices.py` | `e10_threshold_sweep.csv`, `e10_clip_sweep.csv` |
 | E17 (text) | `exp17_pilot_budget.py` | `e17_pilot_budget.csv` |
+| E17 per-run values (text) | `exp17_perrun.py` | `e17_perrun.txt` |
+| E3 closed loop, masks from the fed-back estimate (text) | `exp3_closed_loop.py` | `e3_closed_loop.txt` |
+| E12 at 30 dB (text) | `exp16_scene_gap.py` | `e16_scene_gap.csv` |
+| E7 held-out training curves (text) | `exp7_valcurve.py` | `e7_valcurve.csv` |
+| Fig. 3, 20 dB point at 4×10⁴ draws (text) | `exp1_snr20_check.py` | `e1_snr20_check.txt` |
+| E11 branch mechanism and draw spread (text) | `exp11_mechanism.py`, `exp11_seedvar.py` | `e11_mechanism.txt`, `e11_seedvar.txt` |
+| E18 adapter sensitivity (text) | `exp18_adapter_sensitivity.py` | `e18_adapter_sensitivity.csv`, `e18_log.txt` |
+| Runtimes (text) | `runtime_check.py` | `runtimes.txt` |
 
 ## Requirements and conventions
-- Python 3.10, NumPy 2.2, matplotlib 3.9; PyTorch 2.5 (CPU) for E2/E5/E15, PyTorch 2.10+cu128
-  on an NVIDIA RTX A4500 for E7. `semantic_mac.DEVICE` selects CUDA when available.
+- CPU runs (all experiments except E7): Python 3.10, NumPy 2.2, matplotlib 3.9, PyTorch 2.5 (CPU) for E2/E5/E15.
+- GPU run (E7, `exp7_learned_sideinfo.py`): Python 3.13, NumPy 2.4, PyTorch 2.10+cu128 on an NVIDIA RTX A4500. Exact versions are in `data/environment.txt`. `semantic_mac.DEVICE` selects CUDA when available.
 - Seeds are fixed inside every script (`np.random.default_rng(<constant>)`,
   `torch.manual_seed`); E7 trains over seeds 0–4.
 - Embeddings are unit norm; the per-user SNR is rho = 1/sigma^2 referenced to a

@@ -1,0 +1,7 @@
+zero impairment, 16 independent seeds x 4000 draws
+LMMSE SER mean 0.2772 sd 0.0053 range 0.2654-0.2881
+DR    SER mean 0.0407 sd 0.0019 range 0.0377-0.0445
+ratio LMMSE/DR per seed range 6.16-7.41
+e11_phase.csv [('0', 7.31), ('5', 6.9), ('10', 7.14), ('20', 6.73), ('30', 6.83)]
+e11_cest.csv [('0.0', 6.93), ('0.05', 6.08), ('0.1', 7.04), ('0.2', 6.46), ('0.3', 6.5)]
+e11_imbalance.csv [('0', 7.67), ('3', 5.95), ('6', 6.36), ('10', 5.28), ('15', 4.55)]

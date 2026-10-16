@@ -1,0 +1,9 @@
+Software environment of the reported experiments (Section VII-A, Comment 5.10).
+Checked 2026-10-16.
+
+CPU runs (all experiments except E7), Mac, single process:
+  python 3.10.20 numpy 2.2.5 torch 2.5.1
+
+GPU run (E7, five-seed learned-receiver comparison, code/exp7_learned_sideinfo.py),
+AINS server, ~/miniconda3/bin/python:
+  python 3.13.12 numpy 2.4.2 torch 2.10.0+cu128 cuda 12.8 NVIDIA RTX A4500

@@ -1,0 +1,2 @@
+snr=20 draws=40000 decisions=160000 DR_ser=0.000156 (25 errors) LMMSE_ser=0.01621 SC_ser=0.03931 LMMSE/DR=103.8
+snr=16 draws=40000 decisions=160000 DR_ser=0.003581 (573 errors) LMMSE_ser=0.07910 SC_ser=0.11672 LMMSE/DR=22.1

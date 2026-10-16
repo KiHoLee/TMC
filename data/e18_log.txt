@@ -1,0 +1,98 @@
+/Users/kiholee/Documents/AY/4. 논문/8. TMC/code/exp18_adapter_sensitivity.py:34: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  obj = torch.load(e2.POOL_PT, map_location="cpu")
+spectral: subspace_err=0.4997 ser20=0.0291
+  adapter step 100: loss=0.3697 cosd=0.3696 align=0.1796
+  adapter step 200: loss=0.3012 cosd=0.3005 align=0.1799
+  adapter step 300: loss=0.3065 cosd=0.3053 align=0.1729
+  adapter step 400: loss=0.4207 cosd=0.4192 align=0.1709
+lam_align=0.0: subspace_err=0.4794 ser20=0.0264
+  adapter step 100: loss=0.3774 cosd=0.3694 align=0.1572
+  adapter step 200: loss=0.3086 cosd=0.3007 align=0.1434
+  adapter step 300: loss=0.3138 cosd=0.3062 align=0.1279
+  adapter step 400: loss=0.4264 cosd=0.4189 align=0.1168
+lam_align=0.05: subspace_err=0.4748 ser20=0.0262
+  adapter step 100: loss=0.3835 cosd=0.3695 align=0.1382
+  adapter step 200: loss=0.3138 cosd=0.3015 align=0.1158
+  adapter step 300: loss=0.3186 cosd=0.3076 align=0.0968
+  adapter step 400: loss=0.4298 cosd=0.4197 align=0.0829
+lam_align=0.1: subspace_err=0.4706 ser20=0.0261
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+  adapter step 200: loss=0.3203 cosd=0.3036 align=0.0797
+  adapter step 300: loss=0.3241 cosd=0.3105 align=0.0612
+  adapter step 400: loss=0.4337 cosd=0.4221 align=0.0485
+lam_align=0.2: subspace_err=0.4635 ser20=0.0251
+  adapter step 100: loss=0.4053 cosd=0.3728 align=0.0648
+  adapter step 200: loss=0.3288 cosd=0.3089 align=0.0381
+  adapter step 300: loss=0.3309 cosd=0.3163 align=0.0263
+  adapter step 400: loss=0.4392 cosd=0.4273 align=0.0196
+lam_align=0.5: subspace_err=0.4483 ser20=0.0237
+  adapter step 100: loss=0.4162 cosd=0.3760 align=0.0400
+  adapter step 200: loss=0.3346 cosd=0.3136 align=0.0201
+  adapter step 300: loss=0.3355 cosd=0.3211 align=0.0128
+  adapter step 400: loss=0.4430 cosd=0.4315 align=0.0093
+lam_align=1.0: subspace_err=0.4333 ser20=0.0219
+  adapter step 100: loss=0.3920 cosd=0.3701 align=0.1092
+  adapter step 200: loss=0.3196 cosd=0.3034 align=0.0797
+  adapter step 300: loss=0.3233 cosd=0.3107 align=0.0611
+  adapter step 400: loss=0.4320 cosd=0.4216 align=0.0484
+lam_orth=0.3: subspace_err=0.4636 ser20=0.0253
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+  adapter step 200: loss=0.3203 cosd=0.3036 align=0.0797
+  adapter step 300: loss=0.3241 cosd=0.3105 align=0.0612
+  adapter step 400: loss=0.4337 cosd=0.4221 align=0.0485
+lam_orth=1.0: subspace_err=0.4635 ser20=0.0251
+  adapter step 100: loss=0.3928 cosd=0.3705 align=0.1092
+  adapter step 200: loss=0.3224 cosd=0.3046 align=0.0798
+  adapter step 300: loss=0.3262 cosd=0.3110 align=0.0614
+  adapter step 400: loss=0.4373 cosd=0.4238 align=0.0490
+lam_orth=3.0: subspace_err=0.4635 ser20=0.0251
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+steps=100: subspace_err=0.4863 ser20=0.0279
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+  adapter step 200: loss=0.3203 cosd=0.3036 align=0.0797
+steps=200: subspace_err=0.4765 ser20=0.0264
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+  adapter step 200: loss=0.3203 cosd=0.3036 align=0.0797
+  adapter step 300: loss=0.3241 cosd=0.3105 align=0.0612
+  adapter step 400: loss=0.4337 cosd=0.4221 align=0.0485
+steps=400: subspace_err=0.4635 ser20=0.0251
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+  adapter step 200: loss=0.3203 cosd=0.3036 align=0.0797
+  adapter step 300: loss=0.3241 cosd=0.3105 align=0.0612
+  adapter step 400: loss=0.4337 cosd=0.4221 align=0.0485
+  adapter step 500: loss=0.4388 cosd=0.4285 align=0.0407
+  adapter step 600: loss=0.3650 cosd=0.3552 align=0.0373
+  adapter step 700: loss=0.6530 cosd=0.6436 align=0.0341
+  adapter step 800: loss=0.3582 cosd=0.3493 align=0.0311
+steps=800: subspace_err=0.4468 ser20=0.0231
+  adapter step 100: loss=0.8045 cosd=0.7789 align=0.1277
+  adapter step 200: loss=0.4686 cosd=0.4494 align=0.0936
+  adapter step 300: loss=0.6136 cosd=0.5974 align=0.0760
+  adapter step 400: loss=0.7215 cosd=0.7072 align=0.0644
+batch=12: subspace_err=0.4717 ser20=0.0260
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+  adapter step 200: loss=0.3203 cosd=0.3036 align=0.0797
+  adapter step 300: loss=0.3241 cosd=0.3105 align=0.0612
+  adapter step 400: loss=0.4337 cosd=0.4221 align=0.0485
+batch=24: subspace_err=0.4635 ser20=0.0251
+  adapter step 100: loss=0.7087 cosd=0.6897 align=0.0931
+  adapter step 200: loss=0.6193 cosd=0.6061 align=0.0596
+  adapter step 300: loss=0.4248 cosd=0.4137 align=0.0463
+  adapter step 400: loss=0.5126 cosd=0.5028 align=0.0374
+batch=48: subspace_err=0.4562 ser20=0.0245
+  adapter step 100: loss=0.4236 cosd=0.3922 align=0.1568
+  adapter step 200: loss=0.3436 cosd=0.3163 align=0.1363
+  adapter step 300: loss=0.3358 cosd=0.3123 align=0.1167
+  adapter step 400: loss=0.4570 cosd=0.4369 align=0.0991
+lr=0.0001: subspace_err=0.4812 ser20=0.0267
+  adapter step 100: loss=0.3922 cosd=0.3702 align=0.1092
+  adapter step 200: loss=0.3203 cosd=0.3036 align=0.0797
+  adapter step 300: loss=0.3241 cosd=0.3105 align=0.0612
+  adapter step 400: loss=0.4337 cosd=0.4221 align=0.0485
+lr=0.0003: subspace_err=0.4635 ser20=0.0251
+  adapter step 100: loss=0.3832 cosd=0.3709 align=0.0510
+  adapter step 200: loss=0.3342 cosd=0.3236 align=0.0362
+  adapter step 300: loss=0.3428 cosd=0.3330 align=0.0300
+  adapter step 400: loss=0.4446 cosd=0.4349 align=0.0268
+lr=0.001: subspace_err=0.4539 ser20=0.0261
+E18 done.

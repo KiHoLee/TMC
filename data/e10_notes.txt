@@ -3,7 +3,9 @@ tau=0.40 beta=0.5: LMMSE 0.1697, BLMMSE 0.0188, DR 0.0204, best unstructured ove
 tau=0.45 beta=0.5: LMMSE 0.2792, BLMMSE 0.0387, DR 0.0428, best unstructured over DR 6.53x
 tau=0.50 beta=0.5: LMMSE 0.4155, BLMMSE 0.0786, DR 0.0853, best unstructured over DR 4.87x
 tau=0.55 beta=0.5: LMMSE 0.5701, BLMMSE 0.1661, DR 0.1786, best unstructured over DR 3.19x
-ordering DR at or below every unstructured receiver at every tau in [0.35, 0.4, 0.45, 0.5, 0.55] and every beta in [0.3, 0.4, 0.5, 0.6, 0.7]: True
+tau=0.60 beta=0.5: LMMSE 0.7283, BLMMSE 0.3321, DR 0.3678, best unstructured over DR 1.98x
+tau=0.65 beta=0.5: LMMSE 0.8562, BLMMSE 0.6084, DR 0.6639, best unstructured over DR 1.29x
+ordering DR at or below every unstructured receiver at every tau in [0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65] and every beta in [0.3, 0.4, 0.5, 0.6, 0.7]: True
 h_min=0.05: E[1/h^2]=6.590, beta=0.5 LMMSE 0.2784, DR 0.0417, best unstructured over DR 6.68x
 h_min=0.1: E[1/h^2]=5.086, beta=0.5 LMMSE 0.2780, DR 0.0414, best unstructured over DR 6.71x
 h_min=0.2: E[1/h^2]=3.675, beta=0.5 LMMSE 0.2756, DR 0.0400, best unstructured over DR 6.89x

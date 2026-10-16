@@ -1,0 +1,13 @@
+rdb | DR per-user SER (weak..strong) | genie-shared (private errors only) | genie-private (shared errors only) | mean shared precision a'HBHa/sigma2 | mean shared MSE per coord
+ 0 | [0.0348 0.035  0.0345 0.034 ] | [0. 0. 0. 0.] | [0. 0. 0. 0.] | 43.8 | shared ||c_hat-c||^2 = 0.3005
+ 3 | [0.0492 0.0488 0.046  0.0448] | [0. 0. 0. 0.] | [0. 0. 0. 0.] | 43.3 | shared ||c_hat-c||^2 = 0.3081
+ 6 | [0.0548 0.051  0.0475 0.0482] | [0. 0. 0. 0.] | [0. 0. 0. 0.] | 41.5 | shared ||c_hat-c||^2 = 0.3207
+10 | [0.0782 0.0748 0.0703 0.062 ] | [0. 0. 0. 0.] | [0. 0. 0. 0.] | 38.7 | shared ||c_hat-c||^2 = 0.3408
+15 | [0.1098 0.1028 0.0978 0.0855] | [0. 0. 0. 0.] | [0. 0. 0. 0.] | 35.9 | shared ||c_hat-c||^2 = 0.3641
+
+Per-branch squared error per user (weak..strong); shared error is common to all users
+ 0 dB: shared err [0.1502 0.1502 0.1502 0.1502]  private err [0.4709 0.4703 0.4705 0.471 ]  E[(sum h)^2]=13.53 E[sum h^2]=4.01
+ 3 dB: shared err [0.1541 0.1541 0.1541 0.1541]  private err [0.4794 0.4755 0.4689 0.461 ]  E[(sum h)^2]=13.32 E[sum h^2]=4.02
+ 6 dB: shared err [0.1603 0.1603 0.1603 0.1603]  private err [0.4862 0.4794 0.4686 0.4543]  E[(sum h)^2]=12.62 E[sum h^2]=3.98
+10 dB: shared err [0.1704 0.1704 0.1704 0.1704]  private err [0.4929 0.4856 0.4699 0.4426]  E[(sum h)^2]=11.51 E[sum h^2]=3.97
+15 dB: shared err [0.182 0.182 0.182 0.182]  private err [0.4972 0.4913 0.4739 0.4306]  E[(sum h)^2]=10.28 E[sum h^2]=4.08

@@ -1,0 +1,20 @@
+n_p=  8 overhead=2.00%  (47s)
+   tracked per run: [0.4394 0.4315 0.4375 0.4389 0.4245] mean 0.4343 sd 0.0064
+   static  per run: [0.433  0.432  0.4306 0.432  0.432 ] mean 0.4319 sd 0.0009
+   genie   per run: [0.3706 0.3708 0.3684 0.3703 0.3692] mean 0.3699
+   paired static-tracked: [-0.0064  0.0006 -0.0069 -0.0069  0.0076] mean -0.0024 sd 0.0064 wins(tracked<static) 2 / 5
+n_p= 16 overhead=4.00%  (48s)
+   tracked per run: [0.4223 0.4166 0.4192 0.4253 0.4283] mean 0.4223 sd 0.0047
+   static  per run: [0.4344 0.4337 0.4332 0.4327 0.4341] mean 0.4336 sd 0.0007
+   genie   per run: [0.3716 0.3713 0.3714 0.3708 0.3711] mean 0.3712
+   paired static-tracked: [0.0121 0.0171 0.0141 0.0074 0.0057] mean 0.0113 sd 0.0047 wins(tracked<static) 5 / 5
+n_p= 32 overhead=8.00%  (47s)
+   tracked per run: [0.4005 0.4278 0.4128 0.4057 0.4179] mean 0.4129 sd 0.0106
+   static  per run: [0.4323 0.4329 0.4319 0.4327 0.4311] mean 0.4322 sd 0.0007
+   genie   per run: [0.3699 0.3704 0.3696 0.3695 0.3694] mean 0.3698
+   paired static-tracked: [0.0318 0.005  0.0191 0.027  0.0133] mean 0.0193 sd 0.0107 wins(tracked<static) 5 / 5
+n_p= 64 overhead=16.00%  (47s)
+   tracked per run: [0.3982 0.4056 0.4068 0.4067 0.4063] mean 0.4047 sd 0.0037
+   static  per run: [0.4325 0.432  0.4317 0.4329 0.4323] mean 0.4323 sd 0.0005
+   genie   per run: [0.3702 0.3695 0.3697 0.3703 0.3702] mean 0.37
+   paired static-tracked: [0.0343 0.0264 0.0249 0.0262 0.026 ] mean 0.0275 sd 0.0038 wins(tracked<static) 5 / 5
